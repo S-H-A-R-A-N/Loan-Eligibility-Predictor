@@ -59,15 +59,16 @@ pip install -r requirements.txt
 cd app
 python app.py
 
-5️. Open Browser
-http://127.0.0.1:5000
+5.Open browser and go to:
+http://127.0.0.1:5000 
+
 
 📝 Input Fields
-Age
-Income
-Education
-Credit Score
-Employment Status
+Age,
+Income,
+Education,
+Credit Score,
+Employment Status,
 Loan Amount
 
 📈 Output
