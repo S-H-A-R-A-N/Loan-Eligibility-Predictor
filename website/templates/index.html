@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loan Eligibility Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Loan Eligibility Predictor</h1>
+
+        <!-- Form submits to Flask /predict route -->
+        <form action="/predict" method="post" id="loanForm">
+            <label>Age:</label>
+            <input type="number" name="age" required>
+
+            <label>Income:</label>
+            <input type="number" name="income" required>
+
+            <label>Education:</label>
+            <select name="education" required>
+                <option value="0">Diploma</option>
+                <option value="1">Bachelor</option>
+                <option value="2">Master</option>
+                <option value="3">PhD</option>
+            </select>
+
+            <label>Credit Score:</label>
+            <input type="number" name="credit_score" required>
+
+            <label>Employment Status:</label>
+            <select name="employment_status" required>
+                <option value="0">Unemployed</option>
+                <option value="1">Employed</option>
+                <option value="2">Self-employed</option>
+            </select>
+
+            <label>Loan Amount:</label>
+            <input type="number" name="loan_amount" required>
+
+            <button type="submit">Check Eligibility</button>
+        </form>
+
+        <!-- Display prediction result from Flask -->
+        {% if result %}
+            <div id="result">
+                <h2>Loan Status: {{ result }}</h2>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
+
